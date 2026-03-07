@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://dw1fdbpx0rh8"]
+
+[ext_resource type="Script" uid="uid://42vse8uyrw5n" path="res://init.gd" id="1_8uh7m"]
+[ext_resource type="Script" uid="uid://bf1vnufu7na6x" path="res://addons/midi/MidiPlayer.gd" id="1_37kl0"]
+[ext_resource type="Script" uid="uid://cpftmmt3faa73" path="res://mixer_ui.gd" id="3_6uqi0"]
+
+[node name="Node3D" type="Node3D" unique_id=114098160]
+script = ExtResource("1_8uh7m")
+
+[node name="MidiPlayer" type="Node" parent="." unique_id=1629247925]
+script = ExtResource("1_37kl0")
+file = "res://addons/midi/resources/arrangements/megalo.mid"
+play_speed = 0.487
+key_shift = -4
+loop = true
+soundfont = "res://addons/midi/resources/soundfonts/_Genesis_Megadrive__Sonic_Spinball__U_____.sf2"
+bus = &"Music"
+metadata/_custom_type_script = "uid://bf1vnufu7na6x"
+
+[node name="MixerUI" type="Control" parent="." unique_id=420686882]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 653.0
+offset_bottom = 411.0
+script = ExtResource("3_6uqi0")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MixerUI" unique_id=955536191]
+layout_mode = 0
