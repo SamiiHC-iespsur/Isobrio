@@ -17,7 +17,7 @@ compatibility/default_parent_skeleton_in_mesh_instance_3d=true
 config/name="Isobrio"
 run/main_scene="uid://dw1fdbpx0rh8"
 config/features=PackedStringArray("4.6", "GL Compatibility")
-config/icon="res://icon.svg"
+config/icon="uid://o6rvdpws3wt2"
 
 [audio]
 
