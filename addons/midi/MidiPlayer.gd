@@ -293,6 +293,8 @@ var prepared_to_play:bool = false
 var is_audio_server_inited:bool = false
 # 
 var _previous_time:float
+## track切り替え時に既存ノートを止めないための制御フラグ
+var _suppress_track_reset:bool = false
 
 # -----------------------------------------------------------------------------
 # シグナル
@@ -444,6 +446,19 @@ func _prepare_to_play( ) -> bool:
 
 	return true
 
+## 再生前にファイルとサウンドフォントの準備だけ行う
+## @return	成功すれば true、失敗すれば false を返す
+func prepare_playback( ) -> bool:
+	if not self._prepare_to_play( ):
+		self.prepared_to_play = false
+		return false
+
+	self.prepared_to_play = true
+	self.playing = false
+	self.position = 0.070
+	self.track_status.event_pointer = 0
+	return true
+
 ## トラック初期化
 func _init_track( ) -> void:
 	var track_status_events:Array[SMF.MIDIEventChunk] = []
@@ -529,9 +544,10 @@ func _init_channel( ) -> void:
 ## @param	from_position	再生位置
 func play( from_position:float = 0.0 ) -> void:
 	self._previous_time = 0.0
-	if not self._prepare_to_play( ):
+	if not self.prepared_to_play and not self._prepare_to_play( ):
 		self.playing = false
 		return
+	self.prepared_to_play = true
 	self.playing = true
 	if from_position == 0.0:
 		self.position = 0.0
@@ -586,7 +602,9 @@ func send_reset( ) -> void:
 ## @param	path	ファイルパス
 func set_file( path:String ) -> void:
 	file = path
-	self.stop( )
+	if not self._suppress_track_reset:
+		self.stop( )
+	self.prepared_to_play = false
 	self.smf_data = null
 
 ## 同時発音数変更
@@ -630,7 +648,17 @@ func set_soundfont( path:String ) -> void:
 ## @param	sd	SMFデータ
 func set_smf_data( sd:SMF.SMFData ) -> void:
 	smf_data = sd
-	self.stop( )
+	if not self._suppress_track_reset:
+		self.stop( )
+	self.prepared_to_play = false
+
+## 既存の再生音を止めずに別ファイルへ切り替える
+## @param	path	ファイルパス
+func switch_file( path:String ) -> void:
+	self._suppress_track_reset = true
+	self.file = path
+	self.smf_data = null
+	self._suppress_track_reset = false
 
 ## テンポ設定
 ## @param	bpm	テンポ
