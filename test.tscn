@@ -2,9 +2,59 @@
 
 [ext_resource type="Script" uid="uid://42vse8uyrw5n" path="res://init.gd" id="1_8uh7m"]
 [ext_resource type="Script" uid="uid://bf1vnufu7na6x" path="res://addons/midi/MidiPlayer.gd" id="1_37kl0"]
+[ext_resource type="Texture2D" uid="uid://isobrio_fill" path="res://visual/sprites/isobrio_fill.png" id="1_fill"]
+[ext_resource type="Texture2D" uid="uid://isobrio_main" path="res://visual/sprites/isobrio.png" id="1_main"]
 
 [node name="Node3D" type="Node3D" unique_id=114098160]
 script = ExtResource("1_8uh7m")
+
+[node name="UICanvasLayer" type="CanvasLayer" parent="." unique_id=1000000001]
+layer = 100
+
+[node name="UIRoot" type="Control" parent="UICanvasLayer" unique_id=1000000002]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="BlackScreen" type="ColorRect" parent="UICanvasLayer/UIRoot" unique_id=1000000003]
+color = Color(0, 0, 0, 1)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TitleScreen" type="Control" parent="UICanvasLayer/UIRoot" unique_id=1000000004]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="LogoContainer" type="Node2D" parent="UICanvasLayer/UIRoot/TitleScreen" unique_id=1000000007]
+position = Vector2(960, 540)
+
+[node name="FillImage" type="TextureRect" parent="UICanvasLayer/UIRoot/TitleScreen/LogoContainer" unique_id=1000000005]
+texture = ExtResource("1_fill")
+expand_mode = 2
+stretch_mode = 3
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="MainImage" type="TextureRect" parent="UICanvasLayer/UIRoot/TitleScreen/LogoContainer" unique_id=1000000006]
+texture = ExtResource("1_main")
+expand_mode = 2
+stretch_mode = 3
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
 
 [node name="IntroMidiPlayer" type="Node" parent="." unique_id=1629247925]
 script = ExtResource("1_37kl0")
@@ -40,7 +90,7 @@ metadata/_custom_type_script = "uid://bf1vnufu7na6x"
 
 [node name="RhythmMidiPlayer" type="Node" parent="." unique_id=1629247927]
 script = ExtResource("1_37kl0")
-max_polyphony = 0
+max_polyphony = 1
 file = "res://addons/midi/resources/metronome.mid"
 playing = null
 play_speed = 2.0
