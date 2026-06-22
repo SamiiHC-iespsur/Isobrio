@@ -1,0 +1,87 @@
+[gd_resource type="Resource" script_class="EnemyData" load_steps=9 format=3 uid="uid://enemies_data"]
+
+[ext_resource type="Script" path="res://data_resources.gd" id="1_8uh7m"]
+
+[sub_resource type="EnemyData" id="EnemyData_1"]
+id = 1
+is_boss = false
+name_key = "enemy_shronk"
+vitality = 50
+bits_reward = 10
+reward_item_id = 4
+reward_item_prob = 25
+boss_reward_upgrade_id = 0
+
+[sub_resource type="EnemyData" id="EnemyData_2"]
+id = 2
+is_boss = false
+name_key = "enemy_pomaphus"
+vitality = 75
+bits_reward = 15
+reward_item_id = 5
+reward_item_prob = 20
+boss_reward_upgrade_id = 0
+
+[sub_resource type="EnemyData" id="EnemyData_3"]
+id = 3
+is_boss = false
+name_key = "enemy_lumino"
+vitality = 100
+bits_reward = 25
+reward_item_id = 8
+reward_item_prob = 15
+boss_reward_upgrade_id = 0
+
+[sub_resource type="EnemyData" id="EnemyData_4"]
+id = 4
+is_boss = true
+name_key = "enemy_ancient_pomaphus"
+vitality = 300
+bits_reward = 100
+reward_item_id = 0
+reward_item_prob = 0
+boss_reward_upgrade_id = 1
+
+[sub_resource type="EnemyData" id="EnemyData_5"]
+id = 5
+is_boss = false
+name_key = "enemy_dissonant"
+vitality = 120
+bits_reward = 30
+reward_item_id = 9
+reward_item_prob = 20
+boss_reward_upgrade_id = 0
+
+[sub_resource type="EnemyData" id="EnemyData_6"]
+id = 6
+is_boss = false
+name_key = "enemy_cacophony"
+vitality = 150
+bits_reward = 40
+reward_item_id = 6
+reward_item_prob = 15
+boss_reward_upgrade_id = 0
+
+[sub_resource type="EnemyData" id="EnemyData_7"]
+id = 7
+is_boss = false
+name_key = "enemy_maelstrom"
+vitality = 200
+bits_reward = 60
+reward_item_id = 10
+reward_item_prob = 10
+boss_reward_upgrade_id = 0
+
+[sub_resource type="EnemyData" id="EnemyData_8"]
+id = 8
+is_boss = true
+name_key = "enemy_conductor"
+vitality = 500
+bits_reward = 250
+reward_item_id = 0
+reward_item_prob = 0
+boss_reward_upgrade_id = 5
+
+[resource]
+type = "Array"
+value = [SubResource("EnemyData_1"), SubResource("EnemyData_2"), SubResource("EnemyData_3"), SubResource("EnemyData_4"), SubResource("EnemyData_5"), SubResource("EnemyData_6"), SubResource("EnemyData_7"), SubResource("EnemyData_8")]

@@ -1,0 +1,142 @@
+[gd_resource type="Resource" script_class="ItemData" load_steps=16 format=3 uid="uid://items_data"]
+
+[ext_resource type="Script" path="res://data_resources.gd" id="1_8uh7m"]
+
+[sub_resource type="ItemData" id="ItemData_1"]
+id = 1
+name_key = "item_metronome"
+description_key = "item_metronome_desc"
+comment_key = "item_metronome_comment"
+type = 0
+intensity = 15
+price_bits = 50
+
+[sub_resource type="ItemData" id="ItemData_2"]
+id = 2
+name_key = "item_tuning_fork"
+description_key = "item_tuning_fork_desc"
+comment_key = "item_tuning_fork_comment"
+type = 0
+intensity = 30
+price_bits = 120
+
+[sub_resource type="ItemData" id="ItemData_3"]
+id = 3
+name_key = "item_rhythm_potion"
+description_key = "item_rhythm_potion_desc"
+comment_key = "item_rhythm_potion_comment"
+type = 0
+intensity = 50
+price_bits = 300
+
+[sub_resource type="ItemData" id="ItemData_4"]
+id = 4
+name_key = "item_small_vit"
+description_key = "item_small_vit_desc"
+comment_key = "item_small_vit_comment"
+type = 1
+intensity = 25
+price_bits = 30
+
+[sub_resource type="ItemData" id="ItemData_5"]
+id = 5
+name_key = "item_medium_vit"
+description_key = "item_medium_vit_desc"
+comment_key = "item_medium_vit_comment"
+type = 1
+intensity = 50
+price_bits = 80
+
+[sub_resource type="ItemData" id="ItemData_6"]
+id = 6
+name_key = "item_large_vit"
+description_key = "item_large_vit_desc"
+comment_key = "item_large_vit_comment"
+type = 1
+intensity = 100
+price_bits = 200
+
+[sub_resource type="ItemData" id="ItemData_7"]
+id = 7
+name_key = "item_full_vit"
+description_key = "item_full_vit_desc"
+comment_key = "item_full_vit_comment"
+type = 1
+intensity = 999
+price_bits = 500
+
+[sub_resource type="ItemData" id="ItemData_8"]
+id = 8
+name_key = "item_small_brio"
+description_key = "item_small_brio_desc"
+comment_key = "item_small_brio_comment"
+type = 2
+intensity = 20
+price_bits = 40
+
+[sub_resource type="ItemData" id="ItemData_9"]
+id = 9
+name_key = "item_medium_brio"
+description_key = "item_medium_brio_desc"
+comment_key = "item_medium_brio_comment"
+type = 2
+intensity = 50
+price_bits = 100
+
+[sub_resource type="ItemData" id="ItemData_10"]
+id = 10
+name_key = "item_large_brio"
+description_key = "item_large_brio_desc"
+comment_key = "item_large_brio_comment"
+type = 2
+intensity = 100
+price_bits = 250
+
+[sub_resource type="ItemData" id="ItemData_11"]
+id = 11
+name_key = "item_brio_elixir"
+description_key = "item_brio_elixir_desc"
+comment_key = "item_brio_elixir_comment"
+type = 2
+intensity = 999
+price_bits = 600
+
+[sub_resource type="ItemData" id="ItemData_12"]
+id = 12
+name_key = "item_symphony_draught"
+description_key = "item_symphony_draught_desc"
+comment_key = "item_symphony_draught_comment"
+type = 0
+intensity = 100
+price_bits = 800
+
+[sub_resource type="ItemData" id="ItemData_13"]
+id = 13
+name_key = "item_crescendo_tonic"
+description_key = "item_crescendo_tonic_desc"
+comment_key = "item_crescendo_tonic_comment"
+type = 1
+intensity = 150
+price_bits = 400
+
+[sub_resource type="ItemData" id="ItemData_14"]
+id = 14
+name_key = "item_fortissimo_essence"
+description_key = "item_fortissimo_essence_desc"
+comment_key = "item_fortissimo_essence_comment"
+type = 2
+intensity = 150
+price_bits = 450
+
+[sub_resource type="ItemData" id="ItemData_15"]
+id = 15
+name_key = "item_maestro_elixir"
+description_key = "item_maestro_elixir_desc"
+comment_key = "item_maestro_elixir_comment"
+type = 0
+intensity = 200
+price_bits = 1200
+
+[resource]
+type = "Array"
+value = [SubResource("ItemData_1"), SubResource("ItemData_2"), SubResource("ItemData_3"), SubResource("ItemData_4"), SubResource("ItemData_5"), SubResource("ItemData_6"), SubResource("ItemData_7"), SubResource("ItemData_8"), SubResource("ItemData_9"), SubResource("ItemData_10"), SubResource("ItemData_11"), SubResource("ItemData_12"), SubResource("ItemData_13"), SubResource("ItemData_14"), SubResource("ItemData_15")]

@@ -1,0 +1,115 @@
+[gd_resource type="Resource" script_class="TechniqueData" load_steps=13 format=3 uid="uid://techniques_data"]
+
+[ext_resource type="Script" path="res://data_resources.gd" id="1_8uh7m"]
+
+[sub_resource type="TechniqueData" id="TechniqueData_1"]
+id = 1
+name_key = "tech_rhythmic_strike"
+type = 1
+power = 30
+inputs = [1, 0, 1, 0, 1]
+price_bits = 100
+brio_cost = 15
+
+[sub_resource type="TechniqueData" id="TechniqueData_2"]
+id = 2
+name_key = "tech_syncopated_slash"
+type = 1
+power = 45
+inputs = [1, 0, 0, 1, 0, 1]
+price_bits = 200
+brio_cost = 25
+
+[sub_resource type="TechniqueData" id="TechniqueData_3"]
+id = 3
+name_key = "tech_double_beat"
+type = 2
+power = 25
+inputs = [1, 1, 0, 1, 1]
+price_bits = 150
+brio_cost = 20
+
+[sub_resource type="TechniqueData" id="TechniqueData_4"]
+id = 4
+name_key = "tech_triplet_assault"
+type = 2
+power = 20
+inputs = [1, 1, 1, 0, 1, 1, 1]
+price_bits = 300
+brio_cost = 35
+
+[sub_resource type="TechniqueData" id="TechniqueData_5"]
+id = 5
+name_key = "tech_healing_chorus"
+type = 3
+power = 40
+inputs = [1, 0, 1, 0, 1, 0, 1]
+price_bits = 250
+brio_cost = 30
+
+[sub_resource type="TechniqueData" id="TechniqueData_6"]
+id = 6
+name_key = "tech_vital_hymn"
+type = 3
+power = 80
+inputs = [1, 0, 0, 1, 0, 0, 1, 0, 1]
+price_bits = 500
+brio_cost = 50
+
+[sub_resource type="TechniqueData" id="TechniqueData_7"]
+id = 7
+name_key = "tech_perfect_tempo"
+type = 0
+power = 0
+inputs = [1, 1, 1, 1, 1]
+price_bits = 180
+brio_cost = 10
+
+[sub_resource type="TechniqueData" id="TechniqueData_8"]
+id = 8
+name_key = "tech_offbeat_parry"
+type = 0
+power = 0
+inputs = [0, 1, 0, 1, 0, 1]
+price_bits = 220
+brio_cost = 15
+
+[sub_resource type="TechniqueData" id="TechniqueData_9"]
+id = 9
+name_key = "tech_crescendo_strike"
+type = 1
+power = 60
+inputs = [1, 0, 1, 1, 0, 1, 1, 1]
+price_bits = 400
+brio_cost = 40
+
+[sub_resource type="TechniqueData" id="TechniqueData_10"]
+id = 10
+name_key = "tech_fortissimo_crash"
+type = 2
+power = 50
+inputs = [1, 1, 1, 1, 0, 1, 1, 1, 1]
+price_bits = 600
+brio_cost = 55
+
+[sub_resource type="TechniqueData" id="TechniqueData_11"]
+id = 11
+name_key = "tech_requiem"
+type = 3
+power = 120
+inputs = [1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1]
+price_bits = 1000
+brio_cost = 80
+
+[sub_resource type="TechniqueData" id="TechniqueData_12"]
+id = 12
+name_key = "tech_overture"
+type = 0
+power = 0
+inputs = [1, 0, 1, 1, 0, 1, 0, 1, 1]
+price_bits = 350
+brio_cost = 25
+
+[resource]
+type = "Array"
+value = [SubResource("TechniqueData_1"), SubResource("TechniqueData_2"), SubResource("TechniqueData_3"), SubResource("TechniqueData_4"), SubResource("TechniqueData_5"), SubResource("TechniqueData_6"), SubResource("TechniqueData_7"), SubResource("TechniqueData_8"), SubResource("TechniqueData_9"), SubResource("TechniqueData_10"), SubResource("TechniqueData_11"), SubResource("TechniqueData_12")]

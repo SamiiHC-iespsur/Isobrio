@@ -1,0 +1,117 @@
+[gd_resource type="Resource" script_class="UpgradeData" load_steps=11 format=3 uid="uid://upgrades_data"]
+
+[ext_resource type="Script" path="res://data_resources.gd" id="1_8uh7m"]
+
+[sub_resource type="UpgradeData" id="UpgradeData_1"]
+id = 1
+name_key = "upgrade_vitality_1"
+description_key = "upgrade_vitality_1_desc"
+comment_key = "upgrade_vitality_1_comment"
+price_bits = 200
+is_incremental = true
+incremental_type = 0
+incremental_intensity = 20
+advanced_effect = {}
+
+[sub_resource type="UpgradeData" id="UpgradeData_2"]
+id = 2
+name_key = "upgrade_vitality_2"
+description_key = "upgrade_vitality_2_desc"
+comment_key = "upgrade_vitality_2_comment"
+price_bits = 500
+is_incremental = true
+incremental_type = 0
+incremental_intensity = 30
+advanced_effect = {}
+
+[sub_resource type="UpgradeData" id="UpgradeData_3"]
+id = 3
+name_key = "upgrade_brio_1"
+description_key = "upgrade_brio_1_desc"
+comment_key = "upgrade_brio_1_comment"
+price_bits = 200
+is_incremental = true
+incremental_type = 1
+incremental_intensity = 20
+advanced_effect = {}
+
+[sub_resource type="UpgradeData" id="UpgradeData_4"]
+id = 4
+name_key = "upgrade_brio_2"
+description_key = "upgrade_brio_2_desc"
+comment_key = "upgrade_brio_2_comment"
+price_bits = 500
+is_incremental = true
+incremental_type = 1
+incremental_intensity = 30
+advanced_effect = {}
+
+[sub_resource type="UpgradeData" id="UpgradeData_5"]
+id = 5
+name_key = "upgrade_attack_1"
+description_key = "upgrade_attack_1_desc"
+comment_key = "upgrade_attack_1_comment"
+price_bits = 300
+is_incremental = true
+incremental_type = 2
+incremental_intensity = 5
+advanced_effect = {}
+
+[sub_resource type="UpgradeData" id="UpgradeData_6"]
+id = 6
+name_key = "upgrade_attack_2"
+description_key = "upgrade_attack_2_desc"
+comment_key = "upgrade_attack_2_comment"
+price_bits = 700
+is_incremental = true
+incremental_type = 2
+incremental_intensity = 10
+advanced_effect = {}
+
+[sub_resource type="UpgradeData" id="UpgradeData_7"]
+id = 7
+name_key = "upgrade_defense_1"
+description_key = "upgrade_defense_1_desc"
+comment_key = "upgrade_defense_1_comment"
+price_bits = 250
+is_incremental = true
+incremental_type = 3
+incremental_intensity = 10
+advanced_effect = {}
+
+[sub_resource type="UpgradeData" id="UpgradeData_8"]
+id = 8
+name_key = "upgrade_item_find"
+description_key = "upgrade_item_find_desc"
+comment_key = "upgrade_item_find_comment"
+price_bits = 400
+is_incremental = true
+incremental_type = 4
+incremental_intensity = 15
+advanced_effect = {}
+
+[sub_resource type="UpgradeData" id="UpgradeData_9"]
+id = 9
+name_key = "upgrade_input_window"
+description_key = "upgrade_input_window_desc"
+comment_key = "upgrade_input_window_comment"
+price_bits = 350
+is_incremental = true
+incremental_type = 5
+incremental_intensity = 25
+advanced_effect = {}
+
+[sub_resource type="UpgradeData" id="UpgradeData_10"]
+id = 10
+name_key = "upgrade_bits_reward"
+description_key = "upgrade_bits_reward_desc"
+comment_key = "upgrade_bits_reward_comment"
+price_bits = 300
+is_incremental = true
+incremental_type = 6
+incremental_intensity = 10
+advanced_effect = {}
+
+[resource]
+type = "Array"
+value = [SubResource("UpgradeData_1"), SubResource("UpgradeData_2"), SubResource("UpgradeData_3"), SubResource("UpgradeData_4"), SubResource("UpgradeData_5"), SubResource("UpgradeData_6"), SubResource("UpgradeData_7"), SubResource("UpgradeData_8"), SubResource("UpgradeData_9"), SubResource("UpgradeData_10")]

@@ -1,0 +1,279 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://combat.gd" id="1"]
+[ext_resource type="Texture2D" uid="uid://dcoxa0vtpws54" path="res://visual/sprites/ui/bars.png" id="2"]
+[ext_resource type="Texture2D" path="res://visual/sprites/ui/hp_bar_fill.png" id="3"]
+[ext_resource type="Texture2D" path="res://visual/sprites/ui/brio_bar_fill.png" id="4"]
+
+[node name="CombatScene" type="CanvasLayer"]
+script = ExtResource("1")
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.03, 0.03, 0.06, 1.0)
+mouse_filter = 2
+
+[node name="Arena" type="Node2D" parent="."]
+
+[node name="ArenaBg" type="ColorRect" parent="Arena"]
+color = Color(0.08, 0.08, 0.12, 0.85)
+mouse_filter = 2
+
+[node name="Player" type="Node2D" parent="Arena"]
+
+[node name="Sprite" type="Sprite2D" parent="Arena/Player"]
+
+[node name="Enemies" type="Node2D" parent="Arena"]
+
+[node name="Projectiles" type="Node2D" parent="Arena"]
+
+[node name="LaneMarkers" type="Node2D" parent="Arena"]
+
+[node name="LaneHighlight" type="ColorRect" parent="Arena"]
+color = Color(1, 1, 1, 0.05)
+mouse_filter = 2
+
+[node name="TimingFX" type="Node2D" parent="Arena"]
+
+[node name="HUD" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+
+[node name="PlayerBars" type="Control" parent="HUD"]
+layout_mode = 1
+position = Vector2(20, 20)
+size = Vector2(300, 80)
+mouse_filter = 1
+
+[node name="BarFrame" type="TextureRect" parent="HUD/PlayerBars"]
+layout_mode = 0
+position = Vector2(0, 0)
+size = Vector2(300, 80)
+texture = ExtResource("2")
+expand_mode = 1
+stretch_mode = 5
+mouse_filter = 2
+
+[node name="VITBar" type="TextureProgressBar" parent="HUD/PlayerBars"]
+layout_mode = 0
+position = Vector2(10, 8)
+size = Vector2(280, 26)
+texture_progress = ExtResource("3")
+texture_under = ExtResource("3")
+fill_mode = 0
+value = 100
+max_value = 100
+tint_progress = Color(0.6, 0.1, 0.15, 1.0)
+tint_under = Color(0.15, 0.15, 0.15, 0.5)
+mouse_filter = 2
+
+[node name="BRIOBar" type="TextureProgressBar" parent="HUD/PlayerBars"]
+layout_mode = 0
+position = Vector2(10, 42)
+size = Vector2(280, 26)
+texture_progress = ExtResource("4")
+texture_under = ExtResource("4")
+fill_mode = 0
+value = 0
+max_value = 100
+tint_progress = Color(0.2, 0.5, 0.8, 1.0)
+tint_under = Color(0.15, 0.15, 0.15, 0.5)
+mouse_filter = 2
+
+[node name="VITLabel" type="Label" parent="HUD/PlayerBars"]
+layout_mode = 0
+position = Vector2(10, 10)
+theme_override_font_sizes/font_size = 14
+theme_override_colors/font_color = Color(0.9, 0.9, 0.9, 1.0)
+text = "VIT: 100/100"
+mouse_filter = 2
+
+[node name="BRIOLabel" type="Label" parent="HUD/PlayerBars"]
+layout_mode = 0
+position = Vector2(10, 44)
+theme_override_font_sizes/font_size = 14
+theme_override_colors/font_color = Color(0.7, 0.8, 0.9, 1.0)
+text = "Brio: 0/100"
+mouse_filter = 2
+
+[node name="TurnLabel" type="Label" parent="HUD"]
+layout_mode = 1
+anchors_preset = 8
+anchor_top = 0.05
+anchor_bottom = 0.15
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 36
+theme_override_colors/font_color = Color(0.9, 0.9, 0.9, 1.0)
+text = "Your Turn"
+horizontal_alignment = 1
+mouse_filter = 2
+
+[node name="ActionPanel" type="Control" parent="HUD"]
+layout_mode = 1
+anchors_preset = 8
+anchor_top = 0.75
+anchor_bottom = 0.95
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+
+[node name="Attack" type="Button" parent="HUD/ActionPanel"]
+layout_mode = 1
+position = Vector2(660, 0)
+size = Vector2(120, 50)
+theme_override_font_sizes/font_size = 18
+text = "Attack"
+mouse_filter = 1
+
+[node name="Technique" type="Button" parent="HUD/ActionPanel"]
+layout_mode = 1
+position = Vector2(800, 0)
+size = Vector2(140, 50)
+theme_override_font_sizes/font_size = 18
+text = "Technique"
+mouse_filter = 1
+
+[node name="Item" type="Button" parent="HUD/ActionPanel"]
+layout_mode = 1
+position = Vector2(960, 0)
+size = Vector2(100, 50)
+theme_override_font_sizes/font_size = 18
+text = "Item"
+mouse_filter = 1
+
+[node name="Defend" type="Button" parent="HUD/ActionPanel"]
+layout_mode = 1
+position = Vector2(1080, 0)
+size = Vector2(120, 50)
+theme_override_font_sizes/font_size = 18
+text = "Defend"
+mouse_filter = 1
+
+[node name="Flee" type="Button" parent="HUD/ActionPanel"]
+layout_mode = 1
+position = Vector2(1220, 0)
+size = Vector2(100, 50)
+theme_override_font_sizes/font_size = 18
+text = "Flee"
+mouse_filter = 1
+
+[node name="TimingPanel" type="Control" parent="HUD"]
+layout_mode = 1
+anchors_preset = 8
+anchor_top = 0.35
+anchor_bottom = 0.55
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+visible = false
+
+[node name="BeatIndicator" type="ColorRect" parent="HUD/TimingPanel"]
+layout_mode = 1
+position = Vector2(920, 20)
+size = Vector2(80, 80)
+color = Color(1, 0.9, 0.2, 0.8)
+mouse_filter = 2
+
+[node name="Icon" type="ColorRect" parent="HUD/TimingPanel"]
+layout_mode = 1
+position = Vector2(920, 110)
+size = Vector2(80, 80)
+color = Color(1, 1, 1, 0)
+mouse_filter = 2
+
+[node name="GradeLabel" type="Label" parent="HUD/TimingPanel"]
+layout_mode = 1
+anchors_preset = 8
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 32
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+text = ""
+horizontal_alignment = 1
+mouse_filter = 2
+
+[node name="TechniquePanel" type="Control" parent="HUD"]
+layout_mode = 1
+anchors_preset = 8
+anchor_top = 0.25
+anchor_bottom = 0.65
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+visible = false
+
+[node name="ScrollContainer" type="ScrollContainer" parent="HUD/TechniquePanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Grid" type="GridContainer" parent="HUD/TechniquePanel/ScrollContainer"]
+layout_mode = 2
+columns = 2
+
+[node name="ItemPanel" type="Control" parent="HUD"]
+layout_mode = 1
+anchors_preset = 8
+anchor_top = 0.25
+anchor_bottom = 0.65
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+visible = false
+
+[node name="ScrollContainer" type="ScrollContainer" parent="HUD/ItemPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Grid" type="GridContainer" parent="HUD/ItemPanel/ScrollContainer"]
+layout_mode = 2
+columns = 2
+
+[node name="EnemyBars" type="Control" parent="HUD"]
+layout_mode = 1
+anchors_preset = 10
+anchor_left = 0.7
+anchor_right = 1.0
+anchor_top = 0.02
+anchor_bottom = 0.18
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="BattleLog" type="Label" parent="HUD"]
+layout_mode = 1
+anchors_preset = 8
+anchor_top = 0.68
+anchor_bottom = 0.73
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 22
+theme_override_colors/font_color = Color(0.9, 0.9, 0.7, 1.0)
+text = ""
+horizontal_alignment = 1
+modulate = Color(1, 1, 1, 0)
+mouse_filter = 2
+
+[connection signal="pressed" from="HUD/ActionPanel/Attack" to="." method="_on_attack_pressed"]
+[connection signal="pressed" from="HUD/ActionPanel/Technique" to="." method="_on_technique_pressed"]
+[connection signal="pressed" from="HUD/ActionPanel/Item" to="." method="_on_item_pressed"]
+[connection signal="pressed" from="HUD/ActionPanel/Defend" to="." method="_on_defend_pressed"]
+[connection signal="pressed" from="HUD/ActionPanel/Flee" to="." method="_on_flee_pressed"]
